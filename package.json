@@ -14,7 +14,6 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.8.1",
-    "debug": "^2.2.0",
-    "phantom": "^0.7.2"
+    "phantomjs": "^1.9.18"
   }
 }

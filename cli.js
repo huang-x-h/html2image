@@ -5,8 +5,8 @@ var screenCapture = require('./lib/screencapture');
 
 program
     .version('1.0.0')
-    .option('-u, --url', 'html url')
-    .option('-o, --output', 'output file name')
+    .option('-a, --address [value]', 'html address')
+    .option('-o, --output [value]', 'output file name', 'output.png')
     .parse(process.argv);
 
-screenCapture(program.url, program.output);
+screenCapture(program.address, program.output);
