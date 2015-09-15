@@ -1,0 +1,20 @@
+{
+  "name": "html2image",
+  "version": "1.0.0",
+  "description": "convert html to image by phantomjs",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huang.xinghui <huang.x.hui@gmail.com>",
+  "bin": {
+    "html2image": "cli.js"
+  },
+  "preferGlobal": true,
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "debug": "^2.2.0",
+    "phantom": "^0.7.2"
+  }
+}
