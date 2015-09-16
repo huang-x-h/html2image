@@ -2,18 +2,25 @@
   "name": "html2image",
   "version": "1.0.0",
   "description": "convert html to image/pdf by phantomjs",
-  "main": "cli.js",
+  "main": "screencapture.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "html",
+    "convert"
+  ],
   "author": "huang.xinghui <huang.x.hui@gmail.com>",
   "bin": {
-    "html2image": "cli.js"
+    "html2image": "./cli.js"
   },
   "preferGlobal": true,
   "license": "MIT",
   "dependencies": {
     "commander": "^2.8.1",
     "phantomjs": "^1.9.18"
+  },
+  "engines": {
+    "node": ">=0.10.3"
   }
 }

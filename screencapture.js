@@ -11,7 +11,7 @@ function screenCapture(address, format, proxy) {
     console.log('opened address %s', address);
 
     var childArgs = [
-        path.join(__dirname, '../phantom/screencapture.js')
+        path.join(__dirname, './phantom/screencapture.js')
         , address
         , format
     ];

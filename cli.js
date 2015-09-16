@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 var program = require('commander');
-var screenCapture = require('./lib/screencapture');
+var screenCapture = require('./screencapture');
 
 program
     .version('1.0.0')
