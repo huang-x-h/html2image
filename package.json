@@ -1,7 +1,7 @@
 {
   "name": "html2image",
   "version": "1.0.0",
-  "description": "convert html to image by phantomjs",
+  "description": "convert html to image/pdf by phantomjs",
   "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
