@@ -17,6 +17,7 @@ if (system.args.length < 3 || system.args.length > 5) {
     address = system.args[1];
     format = system.args[2];
 
+    page.viewportSize = { width: 1024, height: 600 };
     if (format === 'padf') {
         page.paperSize = { format: 'A4', orientation: 'portrait', margin: '1cm' }
     }
