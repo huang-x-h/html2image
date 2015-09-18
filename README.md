@@ -1,6 +1,6 @@
 # html2image
 
-Convert html to image(png/jpg) or pdf
+Convert html to image(png/jpg) or pdf by PhantomJS
 
 ## Install
 
