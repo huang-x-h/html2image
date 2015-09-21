@@ -1,6 +1,6 @@
 {
   "name": "html2image",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "convert html to image/pdf by phantomjs",
   "main": "screencapture.js",
   "scripts": {
