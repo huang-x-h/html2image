@@ -8,7 +8,7 @@ Convert html to image(png/jpg) or pdf by PhantomJS
 
 ## Usage
 
-    html2image -a http://address.com
+    html2image -a https://www.baidu.com
 
 ## Help
 

@@ -1,6 +1,6 @@
 {
   "name": "html2image",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "convert html to image/pdf by phantomjs",
   "main": "screencapture.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.8.1",
-    "phantomjs": "^1.9.18"
+    "phantomjs-prebuilt": "^2.1.14"
   },
   "engines": {
     "node": ">=0.10.3"
