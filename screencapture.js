@@ -2,31 +2,25 @@
  * Created by huangxinghui on 2015/9/15.
  */
 
-var childProcess = require('child_process');
-var path = require('path');
-var phantomjs = require('phantomjs-prebuilt');
-var binPath = phantomjs.path;
+const childProcess = require('child_process');
+const phantomjs = require('phantomjs-prebuilt');
+const ora = require('ora');
+const mkdirp = require('mkdirp');
 
-function screenCapture(address, format, proxy) {
-    console.log('opened address %s', address);
+function screenCapture(address, format, output) {
+    const spinner = ora(`Open address ${address}`).start();
 
-    var childArgs = [
-        path.join(__dirname, './phantom/screencapture.js')
-        , address
-        , format
-    ];
+    mkdirp.sync(output);
 
-    if (proxy) {
-        childArgs = ['--proxy=127.0.0.1:1080', '--proxy-type=socks5'].concat(childArgs);
-    }
-
-    childProcess.execFile(binPath, childArgs, function (err, stdout, stderr) {
-        if (err) {
-            console.log(err);
-            return;
+    var program = phantomjs.exec('./lib/screencapture.js', address, format, output);
+    program.stderr.pipe(process.stderr);
+    program.stdout.pipe(process.stdout);
+    program.on('exit', code => {
+        if (code === 0) {
+            spinner.succeed(`Convert address ${address} succeed`);
+        } else {
+            spinner.fail(`Load address ${address} fail`);
         }
-
-        console.log(stdout);
     });
 }
 
