@@ -1,14 +1,20 @@
 #! /usr/bin/env node
 
-var program = require('commander');
-var screenCapture = require('./screencapture');
-var pkg = require('./package.json');
+import { Command, Option } from 'commander/esm.mjs';
+import screenCapture from './screencapture.js';
 
+const program = new Command();
 program
-    .version(pkg.version)
-    .option('-a, --address [value]', 'html address')
-    .option('-f, --format [value]', 'output file format', /^(pdf|png|jpeg|gif)$/i, 'pdf')
-    .option('-o, --output [value]', 'output file path', './')
-    .parse(process.argv);
+  .version('2.0.0')
+  .requiredOption('-a, --address <value>', 'html address')
+  .addOption(
+    new Option('-f, --format [value]', 'output file format').choices(['pdf', 'png', 'jpeg', 'gif']).default('pdf')
+  )
+  .option('-o, --output [value]', 'output file path', './')
+  .addHelpText('after', '\nExample: \n  $ html2image -a https://www.baidu.com -f png -o ./output');
 
-screenCapture(program.address, program.format, program.output);
+program.parse(process.argv);
+const options = program.opts();
+(async () => {
+  await screenCapture(decodeURIComponent(options.address), options.format, options.output);
+})();

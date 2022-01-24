@@ -1,6 +1,6 @@
 # html2image
 
-> Convert html to image(png/jpg) or pdf by PhantomJS
+> Convert html to image(png/jpg) or pdf by puppeteer
 
 ## Install
 
@@ -19,3 +19,7 @@
 ## Help
 
     html2image -h
+
+## TODO
+
+If the url address contain **&**, you should use **encodeURIComponent** to encode the url address, then pass to the html2image command
